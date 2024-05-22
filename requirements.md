@@ -10,6 +10,7 @@ Also consider using this in some way: https://github.com/software-engineering-on
 2. The website should be designed to be responsive, ensuring optimal viewing and interaction experience across various devices and screen sizes.
 3. The website should be optimized for search engines by implementing proper HTML structure, meta tags, descriptive URLs, and other SEO techniques.
 4. The website should have a light mode and a dark mode option that automatically detects the system settings and it should include a button to toggle as well.
+5. The website must be hosted on your GitHub Pages so we can view it without clone it and running it locally. 
 
 ## 2. Navbar
 1. The website should have a navbar.
