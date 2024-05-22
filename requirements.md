@@ -1,5 +1,9 @@
 # Requirements for our new website
 
+Please follow the style guide of any of these here: https://github.com/software-engineering-on-x/styleguide
+
+Also consider using this in some way: https://github.com/software-engineering-on-x/styleguide/blob/master/paul-volkmer-qVotvbsuM_c-unsplash.jpg
+
 ## 1. General
 
 1. The website needs to be compatible with hosting it on GitHub pages.
