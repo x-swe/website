@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 	title: "Software Engineering on X",
 	description: "The best software engineering community on the planet!",
 	keywords: ["software", "engineering", "software engineering community"],
-	icons: [{ rel: "icon", url: "/assets/logo_standard.svg" }],
+	icons: [{ rel: "icon", url: "assets/logo_standard.svg" }],
 };
 
 export default function RootLayout({
