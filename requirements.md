@@ -10,9 +10,10 @@ Also consider using this in some way: https://github.com/software-engineering-on
 2. The website should be designed to be responsive, ensuring optimal viewing and interaction experience across various devices and screen sizes.
 3. The website should be optimized for search engines by implementing proper HTML structure, meta tags, descriptive URLs, and other SEO techniques.
 4. The website should have a light mode and a dark mode option that automatically detects the system settings and it should include a button to toggle as well.
-5. The website must be hosted on your GitHub Pages so we can view it without clone it and running it locally. 
+5. The website must be hosted on your GitHub Pages so we can view it without clone it and running it locally.
 
 ## 2. Navbar
+
 1. The website should have a navbar.
 2. The navbar should contain a logo on the top left.
 3. The navbar should have links to the community, the github organization and contact page.
@@ -34,4 +35,4 @@ Note: To find the Software Engineering partners, send DM to me @mjovanc on X.
 2. The footer should contain the logo and logo to X and GitHub which points to our X community and the GitHub Organization.
 3. The footer should have a (or more) button(s) that allows the users to switch to light/dark/system mode.
 
-This is pretty much it, for the rest you have freedom to come up with more things if you wish so. 
+This is pretty much it, for the rest you have freedom to come up with more things if you wish so.

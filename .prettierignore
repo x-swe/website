@@ -1,0 +1,12 @@
+# Ignore artifacts:
+build
+.next
+node_modules
+/node_modules
+
+yarn-error.log
+yarn.lock
+next-env.d.ts
+*.env
+*.yml
+*.cjs
