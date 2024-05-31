@@ -6,8 +6,10 @@ import { cn } from "@/lib/utils";
 import { Libre_Franklin } from "next/font/google";
 import { Rubik } from "next/font/google";
 import { ThemeProvider } from "./providers/themeProvider";
-import Navi from "@/components/navi";
 import Footer from "@/components/footer";
+import dynamic from "next/dynamic";
+
+const Navi = dynamic(() => import("@/components/navi"), { ssr: false });
 
 const libre_franklin = Libre_Franklin({
 	subsets: ["latin"],
