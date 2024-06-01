@@ -51,7 +51,7 @@ export default function RootLayout({
 			>
 				<ThemeProvider>
 					<Navi />
-					<main className="flex-1 min-w-[400px]">{children}</main>
+					<main className="flex-1 min-w-[400px] flex flex-col">{children}</main>
 					<Footer />
 				</ThemeProvider>
 			</body>
