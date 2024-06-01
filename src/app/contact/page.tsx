@@ -35,7 +35,7 @@ const ContactPage: NextPage = () => {
 			message: elements.message.value,
 		};
 
-		fetch("/api/contact", {
+		fetch("api/contact", {
 			method: "POST",
 			body: JSON.stringify(data),
 		})
