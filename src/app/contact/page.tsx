@@ -4,12 +4,51 @@ import type { NextPage } from "next";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import SubmitButton from "./submitButton";
-import { formSubmitAction } from "./action";
-import { useFormState } from "react-dom";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
+interface FormElements extends HTMLFormControlsCollection {
+	name: HTMLTextAreaElement;
+	email: HTMLInputElement;
+	subject: HTMLTextAreaElement;
+	message: HTMLInputElement;
+}
+interface ContactFormElement extends HTMLFormElement {
+	readonly elements: FormElements;
+}
 
 const ContactPage: NextPage = () => {
-	const [formSubmitted, action] = useFormState(formSubmitAction, false);
+	const [formState, setFormState] = useState({
+		submitted: false,
+		loading: false,
+	});
+
+	const onSubmit = async (e: React.FormEvent<ContactFormElement>) => {
+		e.preventDefault();
+
+		setFormState((prev) => ({ ...prev, loading: true }));
+		const elements = e.currentTarget.elements;
+		const data = {
+			name: elements.name.value,
+			email: elements.email.value,
+			subject: elements.subject.value,
+			message: elements.message.value,
+		};
+
+		fetch("/api/contact", {
+			method: "POST",
+			body: JSON.stringify(data),
+		})
+			.then((res) => {
+				if (res.ok) {
+					setFormState({ submitted: true, loading: false });
+				}
+			})
+			.catch((error) => {
+				console.error("onSubmit -> error", error);
+				setFormState({ submitted: false, loading: false });
+			});
+	};
 
 	return (
 		<section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800 flex-1">
@@ -27,7 +66,7 @@ const ContactPage: NextPage = () => {
 					</p>
 				</div>
 				<div className="w-full max-w-sm m-auto space-y-2">
-					<form className="flex flex-col space-y-4" action={action}>
+					<form className="flex flex-col space-y-4" onSubmit={onSubmit}>
 						<div className="grid gap-2">
 							<Label htmlFor="name" className="text-base">
 								Name
@@ -74,7 +113,14 @@ const ContactPage: NextPage = () => {
 								name="message"
 							/>
 						</div>
-						<SubmitButton disabled={formSubmitted} />
+						<Button
+							type="submit"
+							loading={formState.loading}
+							className="w-full"
+							disabled={formState.submitted}
+						>
+							Submit
+						</Button>
 					</form>
 				</div>
 			</div>

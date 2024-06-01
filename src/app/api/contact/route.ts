@@ -1,4 +1,4 @@
-"use server";
+import { type NextRequest, NextResponse } from "next/server";
 
 import { sendMail, type MailOptions } from "@/services/mailService";
 import { z } from "zod";
@@ -10,17 +10,9 @@ const formDataSchema = z.object({
 	message: z.string(),
 });
 
-export const formSubmitAction = async (
-	initialState: boolean,
-	formData: FormData,
-) => {
+export async function POST(request: NextRequest) {
 	try {
-		const data = formDataSchema.parse({
-			name: formData.get("name"),
-			email: formData.get("email"),
-			subject: formData.get("subject"),
-			message: formData.get("message"),
-		});
+		const data = formDataSchema.parse(await request.json());
 
 		const mailOptions: MailOptions = {
 			subject: data.subject,
@@ -28,9 +20,10 @@ export const formSubmitAction = async (
 			replyTo: data.email,
 		};
 
-		return await sendMail(mailOptions);
+		await sendMail(mailOptions);
+		return NextResponse.json({ message: "Email sent" });
 	} catch (error) {
 		console.error("formSubmitAction -> error", error);
-		return initialState;
+		return NextResponse.json({ error }, { status: 500 });
 	}
-};
+}
