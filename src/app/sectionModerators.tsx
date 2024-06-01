@@ -10,19 +10,24 @@ interface Moderator {
 
 const communityModerators: Moderator[] = [
 	{
-		name: "John Doe",
-		link: "Community Moderator",
-		image: "https://i.pravatar.cc/300",
+		name: "Jakie Nackos",
+		link: "#",
+		image: "assets/mock_images/jakie-nackos-IF9TK5Uy-KI-unsplash.jpg",
 	},
 	{
-		name: "Jane Smith",
-		link: "Community Moderator",
-		image: "https://i.pravatar.cc/300",
+		name: "Jonas Kakaroto",
+		link: "#",
+		image: "assets/mock_images/jonas-kakaroto-KIPqvvTOC1s-unsplash.jpg",
 	},
 	{
-		name: "Michael Johnson",
-		link: "Community Moderator",
-		image: "https://i.pravatar.cc/300",
+		name: "Logan Weaver",
+		link: "#",
+		image: "assets/mock_images/logan-weaver-lgnwvr-p0B7ueoZz8E-unsplash.jpg",
+	},
+	{
+		name: "Stephanie Liverani",
+		link: "#",
+		image: "assets/mock_images/stephanie-liverani-Zz5LQe-VSMY-unsplash.jpg",
 	},
 ];
 
@@ -69,7 +74,11 @@ const ModeratorCard: FC<Moderator> = ({ name, link, image }) => (
 				alt=""
 			/>
 			<CardHeader className="absolute bottom-0 z-20 m-0 ps-4 flex items-center w-full">
-				<img alt="Avatar" className="rounded-full w-36 h-36 mb-2" src={image} />
+				<img
+					alt={name}
+					className="rounded-full w-36 h-36 mb-2 object-cover"
+					src={image}
+				/>
 
 				<CardTitle className="text-xl font-bold text-white grid gap-1 transition duration-200 ease-in-out group-hover:-translate-y-1 group-hover:translate-x-3 group-hover:scale-110 w-full">
 					{name}

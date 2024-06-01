@@ -11,18 +11,18 @@ interface Partner {
 const partners: Partner[] = [
 	{
 		name: "Vercel",
-		link: "Cloud Platform",
-		image: "https://i.pravatar.cc/300",
+		link: "https://vercel.com",
+		image: "assets/mock_images/Vercel_logo.png",
 	},
 	{
-		name: "Radix UI",
+		name: "Shadcn UI",
 		link: "UI Library",
-		image: "https://i.pravatar.cc/300",
+		image: "assets/mock_images/shadcn_logo.png",
 	},
 	{
 		name: "Tailwind CSS",
 		link: "CSS Framework",
-		image: "https://i.pravatar.cc/300",
+		image: "assets/mock_images/Tailwind_CSS_Logo.png",
 	},
 ];
 
@@ -58,21 +58,14 @@ const PartnerCard: FC<Partner> = ({ name, link, image }) => (
 	<Card className="rounded-lg py-2 shadow-sm hover:shadow-xl transition duration-200 ease-in-out bg-transparent border-0 dark:border-2 hover:border-gray-700">
 		<Link
 			href={link}
-			className="flex flex-col items-center gap-4"
+			className="flex flex-col items-center h-full justify-between gap-4"
 			prefetch={false}
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<img
-				src={image}
-				width="80"
-				height="80"
-				className="rounded-full"
-				alt="Logo"
-			/>
-			<div className="grid gap-1">
-				<CardTitle className="text-lg font-semibold">{name}</CardTitle>
-			</div>
+			<img src={image} className="max-h-20 p-1" alt="Logo" />
+
+			<CardTitle className="text-lg font-semibold">{name}</CardTitle>
 		</Link>
 	</Card>
 );
