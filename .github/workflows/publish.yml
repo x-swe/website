@@ -28,7 +28,6 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env: # Env vars that are required during the build
     steps:
       - name: Checkout
         uses: actions/checkout@v4

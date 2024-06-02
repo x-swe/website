@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -27,11 +27,42 @@ const fontSans = FontSans({
 	variable: "--font-sans",
 });
 
+export const baseUrl = "https://odedindi.github.io/Software-Engineering-Community";
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "#ffffff" },
+		{ media: "(prefers-color-scheme: dark)", color: "#020817" },
+	],
+};
+
 export const metadata: Metadata = {
+	metadataBase: new URL(baseUrl),
+	alternates: {
+		canonical: "/",
+	},
 	title: "Software Engineering on X",
 	description: "The best software engineering community on the planet!",
 	keywords: ["software", "engineering", "software engineering community"],
-	icons: [{ rel: "icon", url: "assets/logo_standard.svg" }],
+	icons: [{ rel: "icon", url: "/assets/logo_standard.svg" }],
+	creator: "Oded Winberger",
+	openGraph: {
+		siteName: "Software Engineering on X",
+		title: "Software Engineering on X",
+		description: "The best software engineering community on the planet!",
+		url: baseUrl,
+		type: "website",
+		images: [{ url: "/assets/logo_standard.svg" }],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Software Engineering on X",
+		description: "The best software engineering community on the planet!",
+		creator: "Oded Winberger",
+		images: [`${baseUrl}/assets/logo_standard.svg`], // Must be an absolute URL
+	},
 };
 
 export default function RootLayout({
