@@ -1,12 +1,6 @@
 import nodemailer from "nodemailer";
-import { z } from "zod";
 
-const { NODEMAILER_PASSWORD, NODEMAILER_EMAIL } = z
-	.object({
-		NODEMAILER_PASSWORD: z.string(),
-		NODEMAILER_EMAIL: z.string(),
-	})
-	.parse(process.env);
+const { NODEMAILER_PASSWORD = "", NODEMAILER_EMAIL = "" } = process.env;
 
 export type MailOptions = {
 	subject: string;
