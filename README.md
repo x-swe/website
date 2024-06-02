@@ -56,12 +56,15 @@ yarn dev
 Open http://localhost:3000 with your browser to see the result.
 
 ### Sending Emails
+
 For the contact form, a mail service using Nodemailer has been implemented. This is for development purposes only and uses Gmail. You will need to set up the correct verification on Google. Instructions can be found here or by searching on Google.
 
 Note: The email functionality does not work on GitHub Pages but is included for local development.
 
 ### Deployment
+
 This project is configured to deploy on GitHub Pages. Ensure that the NEXT_PUBLIC_BASE_PATH environment variable is correctly set in your deployment configuration.
 
 ### Contributing
+
 We welcome contributions! Please fork the repository and create a pull request with your changes. Make sure to update the README.md if you make any notable changes to the project.
