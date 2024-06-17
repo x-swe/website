@@ -75,18 +75,16 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning className="overflow-x-hidden">
 			<body
 				className={cn(
-					"flex flex-col min-h-[100dvh] bg-background antialiased",
+					"flex flex-col min-h-[100dvh] bg-background antialiased overflow-x-clip",
 					libre_franklin.variable,
 					rubik.variable,
 					fontSans.variable,
 				)}
 			>
 				<ThemeProvider>
-					<main className="flex-1 min-w-[400px] flex flex-col">
-						<Navi />
-						{children}
-						<Footer />
-					</main>
+					<Navi />
+					<main className="flex-1 min-w-[400px] flex flex-col">{children}</main>
+					<Footer />
 				</ThemeProvider>
 			</body>
 		</html>
