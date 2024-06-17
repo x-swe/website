@@ -27,7 +27,8 @@ const fontSans = FontSans({
 	variable: "--font-sans",
 });
 
-export const baseUrl = "https://odedindi.github.io/Software-Engineering-Community";
+export const baseUrl =
+	"https://odedindi.github.io/Software-Engineering-Community";
 
 export const viewport: Viewport = {
 	width: "device-width",
@@ -71,7 +72,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning className="overflow-x-hidden">
 			<body
 				className={cn(
 					"flex flex-col min-h-[100dvh] bg-background antialiased",
@@ -81,9 +82,11 @@ export default function RootLayout({
 				)}
 			>
 				<ThemeProvider>
-					<Navi />
-					<main className="flex-1 min-w-[400px] flex flex-col">{children}</main>
-					<Footer />
+					<main className="flex-1 min-w-[400px] flex flex-col">
+						<Navi />
+						{children}
+						<Footer />
+					</main>
 				</ThemeProvider>
 			</body>
 		</html>
