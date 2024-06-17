@@ -17,7 +17,7 @@ const PartnerCard: FC<Partner> = ({ name, link, image }) => (
 			target="_blank"
 			rel="noopener noreferrer"
 		>
-			<img src={image} className="max-h-20 p-1" alt="Logo" />
+			<img src={image} className="max-h-20 py-1 px-6" alt="Logo" />
 
 			<CardTitle className="text-lg font-semibold">{name}</CardTitle>
 		</Link>
