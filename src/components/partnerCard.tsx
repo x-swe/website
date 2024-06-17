@@ -9,7 +9,7 @@ export interface Partner {
 }
 
 const PartnerCard: FC<Partner> = ({ name, link, image }) => (
-	<Card className="rounded-lg py-2 shadow-sm hover:shadow-xl transition duration-200 ease-in-out bg-transparent border-0 dark:border-2 hover:border-gray-700">
+	<Card className="rounded-lg py-2 shadow hover:shadow-xl transition duration-200 ease-in-out bg-transparent border-0">
 		<Link
 			href={link}
 			className="flex flex-col items-center h-full justify-between gap-4"
