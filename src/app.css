@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'QuanticoRegular';
+    src: url('./fonts/Quantico/Quantico-Regular.ttf') format('truetype');
+    /* Add additional src statements for other font formats if needed */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'QuanticoBold';
+    src: url('./fonts/Quantico/Quantico-Bold.ttf') format('truetype');
+    /* Add additional src statements for other font formats if needed */
+    font-weight: bold;
+    font-style: italic;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+.regular-font {
+    font-family: 'QuanticoRegular', sans-serif;
+}
+
+.bold-font {
+    font-family: 'QuanticoBold', sans-serif;
+}
+
+a {
+    color: #7e5bef; /* Link color */
+    text-decoration: none; /* Remove underline */
+    position: relative; /* Required for pseudo-element */
+    transition: color 0.3s ease; /* Transition for color change */
+}
+
+/* Pseudo-element for creating the slow motion effect */
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Height of the line */
+    bottom: 0;
+    left: 0;
+    background-color: white; /* Line color */
+    visibility: hidden;
+    transform: scaleX(0); /* Initially hidden */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover state for the hyperlink */
+a:hover {
+    color: white; /* Change color on hover */
+}
+
+/* Slow motion effect when hovering */
+a:hover::before {
+    visibility: visible;
+    transform: scaleX(1); /* Show line slowly */
+}
+
+/* Exclude effect on links with the class "no-hover-effect" */
+a.no-hover-effect::before {
+    display: none !important; /* Hide the pseudo-element */
+}
+
+a.no-hover-effect:hover::before {
+    visibility: hidden; /* Ensure it stays hidden on hover */
+    transform: scaleX(0); /* Ensure it stays hidden on hover */
+}
+
+
+strong {
+    font-weight: bold; /* Ensures text is bold */
+    font-size: 1.1em;  /* Slightly increase the font size */
+    padding: 2px 4px;  /* Optional: Padding around the text */
+    border-radius: 3px; /* Optional: Rounded corners */
+    text-transform: uppercase; /* Optional: Uppercase text */
+    font-style: italic;
+    border-bottom: 2px solid #7e5bef;
+}
+
